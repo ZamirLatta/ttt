@@ -38,7 +38,9 @@ char row3d[4] = "~~~";
 
 void graphics()
 {
-    printf("%s\n%s\n%s", row1d, row2d, row3d);
+    printf("%s", row1d);
+    printf("\n%s", row2d);
+    printf("\n%s", row3d);
 }
 
 int logic()
@@ -65,45 +67,59 @@ int logic()
             row1[0] = xo;
             col1[0] = xo;
             dia1[0] = xo; 
-        } else if (strcmp(pos, _12)==0)
+        } 
+	
+	if (strcmp(pos, _12)==0)
         {
             row1[1] = xo;
             col2[0] = xo;
-        } else if (strcmp(pos, _13)==0)
+        }
+	
+	if (strcmp(pos, _13)==0)
         {
             row1[2] = xo;
             col3[0] = xo;
             dia2[0] = xo;
-        } else if(strcmp(pos, _21)==0)
+        }
+	
+	if(strcmp(pos, _21)==0)
         {
             row2[0] = xo;
             col1[1] = xo; 
-        } else if (strcmp(pos, _22)==0)
+        }
+	
+	if (strcmp(pos, _22)==0)
         {
             row2[1] = xo;
             col2[1] = xo;
             dia1[1] = xo;
             dia2[1] = xo;
-        } else if (strcmp(pos, _23)==0)
+        }
+	
+	if (strcmp(pos, _23)==0)
         {
             row2[2] = xo;
             col3[1] = xo;
-        } else if(strcmp(pos, _31)==0)
+        }
+	
+	if(strcmp(pos, _31)==0)
         {
             row3[0] = xo;
             col1[2] = xo;
             dia2[2] = xo; 
-        } else if (strcmp(pos, _32)==0)
+        }
+	
+	if (strcmp(pos, _32)==0)
         {
             row3[1] = xo;
             col2[2] = xo;
-        } else if (strcmp(pos, _33)==0)
+        }
+	
+	if (strcmp(pos, _33)==0)
         {
             row3[2] = xo;
             col3[2] = xo;
             dia1[2] = xo;
-        } else {
-            printf("turn error");
         }
 
         // graphics
