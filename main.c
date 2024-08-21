@@ -26,7 +26,7 @@ char row3d[4] = "~~~";
 
 void graphics()
 {
-    printf("\n%s", row1d);
+    printf("%s", row1d);
     printf("\n%s", row2d);
     printf("\n%s", row3d);
 }
