@@ -6,9 +6,11 @@ int xwins = 0; // # of x wins
 int owins = 0; // # of o wins
 int turn = 0; // turn #
 char xo = '~'; // x or o character
-char pos[3]; // current coordinate
+int pos[3]; // current coordinate
 
-char row1[3];
+int board[3][3] = {{0,0,0}, {0,0,0}, {0,0,0}};
+
+/*char row1[3];
 char row2[3];
 char row3[3];
 
@@ -31,7 +33,8 @@ void graphics()
     printf("\n%s", row3d);
 }
 
-int logic()
+/*
+int logic(int c)
 {
     while(chkwin==0)
     {
@@ -45,11 +48,18 @@ int logic()
             xo = 'O';
             turn++;
         }
+
+        if(turn==1)
+        {
+            graphics();
+        }
         
         // input
         // convert str to int
+        printf("\nWhere will you move? ");
         fgets(pos, 4, stdin);
         int posi = strtol(pos, NULL, 10);
+        //printf("%i", posi);
 
         // check where to put xo
         if(posi==11)
@@ -120,28 +130,55 @@ int logic()
         graphics();
 
         // check win
-        if(strcmp(row1,"XXX")==0 || strcmp(row2,"XXX")==0 || strcmp(row3,"XXX")==0 || strcmp(col1,"XXX")==0 || strcmp(col2,"XXX")==0 || strcmp(col3,"XXX")==0 || strcmp(dia1,"XXX")==0 || strcmp(dia2,"XXX")==0)
+        if((strcmp(row1,"XXX")==0) || (strcmp(row2,"XXX")==0) || (strcmp(row3,"XXX")==0) || (strcmp(col1,"XXX")==0) || (strcmp(col2,"XXX")==0) || (strcmp(col3,"XXX")==0) || (strcmp(dia1,"XXX")==0) || (strcmp(dia2,"XXX")==0))
         {
             printf("\nx wins");
             xwins++;
             chkwin = 1;
         }
 
-        if(strcmp(row1,"OOO")==0 || strcmp(row2,"OOO")==0 || strcmp(row3,"OOO")==0 || strcmp(col1,"OOO")==0 || strcmp(col2,"OOO")==0 || strcmp(col3,"OOO")==0 || strcmp(dia1,"OOO")==0 || strcmp(dia2,"OOO")==0)
+        if((strcmp(row1,"OOO")==0) || (strcmp(row2,"OOO")==0) || (strcmp(row3,"OOO")==0) || (strcmp(col1,"OOO")==0) || (strcmp(col2,"OOO")==0) || (strcmp(col3,"OOO")==0) || (strcmp(dia1,"OOO")==0) || (strcmp(dia2,"OOO")==0))
         {
             printf("\no wins");
             owins++;
             chkwin = 1;
         }
+
     }
+    
+    // input for y/n playing again
+    printf("Would you like to play again? (y)\n");
+    char yn[2];
+    fgets(yn, 0, stdin);
+    /*int yni = strtol(yn, NULL, 10);
+    
+    if(yni==121)
+    {
+        chkwin=0;
+    } else 
+    {
+        c=chkwin;
+    }
+
+    return(c);
+}
+*/
+
+int logic_two()
+{
+
+}
+
+int test() 
+{
+    printf("hello world");
     return(0);
 }
 
-// int test() {}
-
 int main()
 {
-    logic();
+    //logic();
+    //logic_two();
     //test();
     //graphics();
     return(0);
